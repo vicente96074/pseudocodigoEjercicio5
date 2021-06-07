@@ -1,0 +1,51 @@
+Inicio pseudocodigoEjercicio5
+
+	Arreglo persona[N]
+	Variable edad
+	Variable sexo
+	Variable cantidad
+	Variable posicion = 0
+	
+	Variable i
+	Variable mayorEdadMujeres = 0
+	Variable menorEdadHombres = 0
+	
+	Escribir "Digite la cantidad de personas a ingresar: "
+	Leer cantidad
+	
+	Desde i=0; hasta i<cantidad; aumentar i = i+1
+		Escribir "Digite su edad: "
+		Leer edad
+		Escribir "Digite su sexo: "
+		Leer sexo
+		
+		Si(sexo = femenino) hacer
+			persona[posicion].establecerSexo(femenino)
+			persona[posicion].establecerEdad(edad)
+			posicon = posicon +1
+		FinSi
+
+		Sino(sexo = masculino) hacer
+			persona[posicion].establecerSexo(masculino)
+			persona[posicion].establecerEdad(edad)
+			posicon = posicon +1
+		FinSino
+		
+	FinDesde
+	
+	Desde i=0; hasta i<cantidad; aumentar i = i+1
+		Si(persona[i].obtenerSexo = femenino) hacer
+			Si(persona[i].obtenerEdad > 18)
+				mayorEdadMujeres = mayorEdadMujeres + 1
+			FinSi
+		FinSi
+		Sino(persona[i].obtenerSexo = masculino) hacer
+			Si(persona[i].obtenerEdad < 18)
+				menorEdadHombres = menorEdadHombres + 1
+			FinSi
+		FinSino
+	FinDesde
+	
+	Escribir "Hay " + mayorEdadMujeres + " mujeres mayores a 18 años"
+	Escribir "Hay " + menorEdadHombres + " hombres menores a 18 años"
+Fin
